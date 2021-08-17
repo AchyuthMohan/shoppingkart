@@ -13,19 +13,21 @@
         <a class="navbar-brand" href="#">Shop Ninja</a>
         
       </nav>
-      <section class="mt-5">
-		  <div class="col-md-4">
-      <div class="card " style="width: 18rem;">
-  <img class="card-img-top mt-20" style="width:200px;height:200px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1K-ORnJivK_X9UL2xSj-QLP3M-d0V12ylX3PO-mUt4X3nOrXqRdrnUwG1TY_qOUm527x_3jo&usqp=CAc" alt="Card image cap">
+      
+	  
+     {% for prod in prods%}
+	 <div class="card col-xl-4 col-lg-4 col-md-4" style="width: 18rem;">
+  <img class="card-img-top" src="{{prod.img.url}}" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title">Product: </h5>
-    <p class="card-text">Release date:</p>
-	 <p class="card-text">Price:</p>
-    <a href="#" class="btn btn-primary">Buy Now</a>
+    <h5 class="card-title">{{prod.name}}</h5>
+    <p class="card-text">{{prod.desc}}</p>
+    <a href="#" class="btn btn-primary">BUY</a>
   </div>
 </div>
-</div>
-</section>
+                 
+     {% endfor%}
+
+
 
     <!-- Optional JavaScript; choose one of the two! -->
 

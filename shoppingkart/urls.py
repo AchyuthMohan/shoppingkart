@@ -20,9 +20,12 @@ import login
 from login import urls
 import products
 from products import urls
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(login.urls)),
     path('products/', include(products.urls)),
 ]
+urlpatterns=urlpatterns+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
