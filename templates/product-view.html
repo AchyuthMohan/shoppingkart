@@ -152,51 +152,29 @@ a {
                             </tr>
                         </thead>
                         <tbody>
+                          {% for prod in prods  %}
+                            
+                          
                             <tr>
                                 <td>
                                     <figure class="itemside align-items-center">
-                                        <div class="aside"><img src="https://i.imgur.com/1eq5kmC.png" class="img-sm"></div>
-                                        <figcaption class="info"> <a href="#" class="title text-dark" data-abc="true">Tshirt with round nect</a>
-                                            <p class="text-muted small">SIZE: L <br> Brand: MAXTRA</p>
+                                        <div class="aside"><img src="{{prod.img.url}}" class="img-sm"></div>
+                                        <figcaption class="info"> <a href="#" class="title text-dark" data-abc="true">{{prod.name}}</a>
+                                            <p class="text-muted small">{{prod.desc}}</p>
                                         </figcaption>
                                     </figure>
                                 </td>
                                 
                                 <td>
-                                    <div class="price-wrap"> <var class="price">$10.00</var> <small class="text-muted"> $9.20 each </small> </div>
-                                </td>
+                                    <div class="price-wrap"> <var class="price">{{prod.price}}</var>  </div><br>
+                                    <button type="button" class="btn btn-primary">Purchase</button>
+                                  </td>
+                                
                                 
                             </tr>
-                            <tr>
-                                <td>
-                                    <figure class="itemside align-items-center">
-                                        <div class="aside"><img src="https://i.imgur.com/hqiAldf.jpg" class="img-sm"></div>
-                                        <figcaption class="info"> <a href="#" class="title text-dark" data-abc="true">Flower Formal T-shirt</a>
-                                            <p class="text-muted small">SIZE: L <br> Brand: ADDA </p>
-                                        </figcaption>
-                                    </figure>
-                                </td>
-                                
-                                <td>
-                                    <div class="price-wrap"> <var class="price">$15</var> <small class="text-muted"> $12 each </small> </div>
-                                </td>
-                                
-                            </tr>
-                            <tr>
-                                <td>
-                                    <figure class="itemside align-items-center">
-                                        <div class="aside"><img src="https://i.imgur.com/UwvU0cT.jpg" class="img-sm"></div>
-                                        <figcaption class="info"> <a href="#" class="title text-dark" data-abc="true">Printed White Tshirt</a>
-                                            <p class="small text-muted">SIZE:M <br> Brand: Cantabil</p>
-                                        </figcaption>
-                                    </figure>
-                                </td>
-                                
-                                <td>
-                                    <div class="price-wrap"> <var class="price">$9</var> <small class="text-muted"> $6 each</small> </div>
-                                </td>
-                                
-                            </tr>
+                            {% endfor %}
+                            
+                            
                         </tbody>
                     </table>
                 </div>
