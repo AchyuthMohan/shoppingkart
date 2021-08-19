@@ -5,5 +5,7 @@ from .models import customer
 # Create your views here.
 def signup(request):
     if request.method=='POST':
-        print("HELLO" )
+        print("hello")
+
+
     return render(request,'signup.html')
