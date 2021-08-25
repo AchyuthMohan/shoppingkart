@@ -15,25 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.urls.conf import include
-import login
-from login import urls
-import products
-from products import urls
-from django.conf import settings
-from django.conf.urls.static import static
-import buy
-from buy import urls
-import register
-from register import urls
-
+from . import views
 
 urlpatterns = [
-    path('admin', admin.site.urls),
-    path('', include(login.urls)),
-    path('products/', include(products.urls)),
-    path('products/buy', include(buy.urls)),
-    path('register', include(register.urls)),
-  
+    path('',views.buy),
+    
+
 ]
-urlpatterns=urlpatterns+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
