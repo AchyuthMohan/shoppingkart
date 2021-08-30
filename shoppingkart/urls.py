@@ -31,7 +31,7 @@ from register import urls
 urlpatterns = [
     path('admin', admin.site.urls),
     path('', include(login.urls)),
-    path('products/', include(products.urls)),
+    path('products/', include(products.urls),name="products"),
     path('products/buy', include(buy.urls)),
     path('register', include(register.urls)),
   
