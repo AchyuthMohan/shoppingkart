@@ -26,6 +26,8 @@ import buy
 from buy import urls
 import register
 from register import urls
+from  django.views.static import serve
+from django.conf.urls import url
 
 
 urlpatterns = [
@@ -34,6 +36,8 @@ urlpatterns = [
     path('products/', include(products.urls),name="products"),
     path('products/buy', include(buy.urls)),
     path('register', include(register.urls)),
+     url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
+    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
   
 ]
 urlpatterns=urlpatterns+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
